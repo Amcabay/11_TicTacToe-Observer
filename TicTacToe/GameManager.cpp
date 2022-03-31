@@ -20,7 +20,6 @@ GameManager::GameManager()
 
 bool GameManager::checkWin()
 {
-	//cout << "checkWin is called" << endl;
 	if (board.getDiagonal() || board.getHorizontal() || board.getVertical())
 	{
 		isWin = true;
@@ -65,7 +64,7 @@ void GameManager::makeMove()
 		switchTurn();
 	}
 	else {
-		cout << "Move is illegal" << endl;
+		cout << "Wrong Move" << endl;
 	}
 }
 
@@ -73,7 +72,6 @@ void GameManager::announce()
 {
 	if (isWin)
 	{
-		// cout << "The Winner is: " << player_win.getName() << endl;
 		player_1.updateState(player_win);
 		player_2.updateState(player_win);
 		cout << endl << "Current Score : " << endl;
